@@ -4,8 +4,9 @@
 
 ## PC에서 실행 (개발·시험용)
 ```bash
-python -m http.server 8765 --bind 127.0.0.1 --directory "C:\Users\L2404161\Desktop\실습 17-3\현장체크리스트"
+python -m http.server 8765 --bind 127.0.0.1 --directory 현장체크리스트
 ```
+(프로젝트 맨 위 폴더에서 실행)
 브라우저에서 http://localhost:8765 를 엽니다. (파일을 더블클릭해 열면 동작하지 않습니다.)
 
 ## 지금 되는 것
