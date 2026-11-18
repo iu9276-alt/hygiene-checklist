@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' blob: data:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'">
+  <meta name="referrer" content="no-referrer">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>자가 점검 · 위생점검</title>
+  <link rel="stylesheet" href="../css/app.css">
+  <style>
+    .t-group h2 { margin: 18px 0 6px; }
+    .t-row { display: grid; grid-template-columns: 28px 64px 1fr; gap: 6px; padding: 6px 4px; border-bottom: 1px solid var(--line); font-size: 14px; }
+    .t-row .mark { font-weight: 700; }
+    .t-row.pass .mark { color: var(--ok); }
+    .t-row.fail { background: var(--bad-bg); }
+    .t-row.fail .mark { color: var(--bad); }
+    .t-row .id { color: var(--muted); font-variant-numeric: tabular-nums; }
+    .t-row .err { grid-column: 3; color: var(--bad); white-space: pre-wrap; font-size: 13px; }
+    #summary { font-size: 17px; }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <a class="icon-btn" href="../#/settings" aria-label="뒤로">←</a>
+    <h1>자가 점검 (자동 테스트)</h1>
+  </header>
+  <main>
+    <p class="muted small">웹앱의 계산·검사 규칙을 시험용 가짜 데이터로 확인합니다. 이 기기에 저장된 실제 점검 데이터는 읽거나 바꾸지 않습니다.
+      항목 번호는 <b>검증기준.md</b>의 번호와 같습니다.</p>
+    <button type="button" id="run" class="btn block">테스트 실행</button>
+    <div id="summary" class="notice" hidden></div>
+    <div id="out"></div>
+  </main>
+  <script type="module" src="tests.js"></script>
+</body>
+</html>
